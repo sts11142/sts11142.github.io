@@ -1,0 +1,435 @@
+.main-content {
+  /* 動作変更 */
+  /* position: relative;  */
+
+  grid-area: main;
+  background: #343a40;
+  border-top: 1px solid #28abb9;
+  overflow-y: scroll;
+}
+
+.content-items {
+  display: none;
+}
+
+.content-home {
+  font-family: 'Noto Sans JP', sans-serif;
+  display: block;
+  width: 80%;
+  margin: 20rem auto 0 auto;
+}
+
+.content-home .myIcon {
+  background-image: url(../../public/img/myicon.jpeg);
+  background-position: center;
+  background-size: 32rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  border: 6px solid #e1e8eb;
+
+  margin: 0 auto;
+}
+
+.my-intro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.my-name {
+  font-size: 4rem;
+  color: #e1e8eb;
+  letter-spacing: 0.15em;
+  position: relative;
+}
+.my-name::before {
+  content: '';
+  /* width: 8rem; */
+  width: 0;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-4rem);
+  /* border-bottom: 2px solid #28abb9; */
+  border-bottom: 2px solid #e1e8eb;
+  animation: fadeInRight 3s ease-in-out 0s 1 normal forwards running,
+    recolor 1s ease 3.5s normal forwards running;
+}
+.my-name::after {
+  content: '';
+  width: 4rem;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-4rem);
+  /* border-bottom: 2px solid #28abb9; */
+  border-bottom: 2px solid #343a40;
+  animation: fadeInLeft 2s ease-in-out 1s 1 normal forwards running;
+}
+.my-name span {
+  /* color: #28abb9; */
+  color: #e1e8eb;
+  animation: dotRecolor 1s ease 3.5s normal forwards running;
+}
+@keyframes fadeInRight {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 8rem;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-4rem);
+  }
+  100% {
+    transform: translateX(-8rem);
+  }
+}
+@keyframes recolor {
+  0% {
+    border-bottom: 2px solid #e1e8eb;
+  }
+  100% {
+    border-bottom: 2px solid #28abb9;
+  }
+}
+@keyframes dotRecolor {
+  0% {
+    color: #e1e8eb;
+  }
+  100% {
+    color: #28abb9;
+  }
+}
+
+/*
+  content-about
+*/
+.content-about ul,
+.content-works ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-about .content,
+.content-works .content {
+  box-sizing: border-box;
+  /* max-width: 80%; */
+  max-width: 60%;
+  margin: 8rem auto 0 auto;
+  padding: 0;
+}
+.content-about .section,
+.content-works .section {
+  margin-bottom: 7.2rem;
+  /* margin-bottom: 8.4rem; */
+}
+.content-about .section:last-child,
+.content-works .section:last-child {
+  margin-bottom: 3.6rem;
+}
+/* .content-about .text,
+.content-works .text
+{
+  color: #E1E8EB;
+  letter-spacing: 1.5px;
+} */
+.content-about .htext,
+.content-works .htext {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #e1e8eb;
+  letter-spacing: 1.5px;
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 4.8rem;
+}
+.content-about .line,
+.content-works .line {
+  height: 2px;
+  width: 100%;
+  background: #e1e8eb;
+  background: #e1e8eba2;
+  margin-bottom: 4.8rem;
+}
+.content-about .ptext,
+.content-works .ptext {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #e1e8eb;
+  /* letter-spacing: 3.8px; */
+  letter-spacing: 2.5px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  line-height: 4.8rem;
+  font-weight: lighter;
+}
+.content-about .li,
+.content-works .li {
+  font-family: 'Noto Sans JP', sans-serif;
+  /* margin-left: 1.2rem; */
+  margin-left: 3.6rem;
+  position: relative;
+}
+.content-about .li::before,
+.content-works .li::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  /* top: 8px; */
+  /* top: 18px; */
+  top: 24px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #e1e8eb;
+}
+.content-about .lili,
+.content-works .lili {
+  font-family: 'Noto Sans JP', sans-serif;
+  /* margin-left: 1.2rem; */
+  margin-left: 7.2rem;
+  position: relative;
+}
+.content-about .lili::before,
+.content-works .lili::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  /* top: 8px; */
+  /* top: 18px; */
+  top: 24px;
+  /* 丸くり抜き */
+  /* width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #e1e8eb; */
+  /* 横棒 */
+  width: 6px;
+  height: 2px;
+  background: #e1e8eb;
+}
+.content-about span.bold,
+.content-works span.bold {
+  font-weight: 800;
+}
+.content-about .end,
+.content-works .end {
+  height: 4.8rem;
+}
+.content-about pre.prettyprint,
+.content-works pre.prettyprint
+{
+  font-size: 1.7rem;
+}
+.content-about pre,
+.content-works pre {
+  overflow: scroll;
+  width: 100%;
+  border-radius: 10px;
+}
+.content-about code,
+.content-works code {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: scroll;
+  width: 6rem;
+}
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  list-style-position: outside;
+  /* margin-left: 36px; */
+  margin-left: 6rem;
+  /* padding-left: 16px; */
+  padding-left: 16rem;
+}
+li.L0:first-child {
+  margin-top: 2rem;
+}
+.content-about li:last-child,
+.content-works li:last-child {
+  margin-bottom: 2rem;
+}
+/*
+  content-works
+*/
+
+/* 
+  content-message
+*/
+
+/* .content-message.fadeInAnime {
+  animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards running;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+.content-message .content * {
+  box-sizing: border-box;
+}
+.content-message .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 2rem;
+  width: 100%;
+  padding-top: 12rem;
+
+  /* 動作変更 */
+  /* position: absolute;
+  top: -5rem;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+}
+.msg-container {
+  position: relative;
+  /* z-index: 1; */
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2.5rem 4.5rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+}
+.msg-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+.msg-container h2 {
+  width: 100%;
+  text-align: center;
+  color: #e1e8eb;
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+.msg-container .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+/* 独自スタイル */
+/* .msg-container .row100:nth-child(3) {
+  height: 10rem;
+} */
+.msg-container .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 3rem 0 2rem;
+}
+.msg-container .row100 .col .inputBox {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  color: #e1e8eb;
+}
+/* 独自スタイル */
+/* .msg-container .row100:nth-child(4) .col .inputBox {
+  height: 6rem;
+} */
+.msg-container .row100 .col .inputBox input,
+.msg-container .row100 .col .inputBox textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  z-index: 1;
+  color: rgb(22, 22, 22);
+}
+/* 独自スタイル */
+/* .msg-container .row100 .col .inputBox textarea {
+  padding-top: 0.25rem;
+} */
+.msg-container .row100 .col .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 4rem;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.msg-container .row100 .col .inputBox input:focus + .text,
+.msg-container .row100 .col .inputBox input:valid + .text,
+.msg-container .row100 .col .inputBox textarea:focus + .text,
+.msg-container .row100 .col .inputBox textarea:valid + .text {
+  top: -3.5rem;
+  left: -1rem;
+}
+.msg-container .row100 .col .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #e1e8eb;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.msg-container .row100 .col .inputBox input:focus ~ .line,
+.msg-container .row100 .col .inputBox input:valid ~ .line {
+  height: 100%;
+}
+.msg-container .row100 .col .inputBox textarea:focus ~ .line,
+.msg-container .row100 .col .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+.msg-container .row100 .col .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  padding: 1rem 0;
+}
+.msg-container .row100 .col input[type='submit'] {
+  border: none;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  outline: none;
+  background: #e1e8eb;
+  color: rgb(22, 22, 22);
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 2px;
+
+  transition: all 0.3s;
+}
+.msg-container .row100 .col input[type='submit']:hover {
+  background: #28abb9;
+  color: #e1e8eb;
+}
